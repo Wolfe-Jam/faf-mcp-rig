@@ -1,0 +1,37 @@
+name: 📡 MCP Registry Publish (DNS)
+
+# THE REFERENCE for one.faf/* servers. Unlike GitHub-OIDC auth (which only
+# authorises io.github.<owner>/* namespaces), DNS auth proves ownership of the
+# faf.one domain → authorises the one.faf/* namespace. This is the durable fix
+# the claude-faf-mcp 5.9.1 migration identified.
+#
+# Requires repo secret FAF_ONE_MCP_PRIVATE_KEY = the ed25519 private key (64-hex)
+# whose public key is the `v=MCPv1; k=ed25519; p=...` TXT record at the faf.one apex.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mcp-publisher
+        run: |
+          curl -sL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" -o mcp-publisher.tar.gz
+          tar -xzf mcp-publisher.tar.gz && chmod +x ./mcp-publisher
+
+      - name: Verify server.json version == release tag
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          MV=$(node -p "require('./server.json').version")
+          [ "$TAG" = "$MV" ] || { echo "::error::server.json $MV != tag $TAG"; exit 1; }
+
+      - name: Login via DNS (one.faf namespace)
+        run: ./mcp-publisher login dns --domain faf.one --private-key "${{ secrets.FAF_ONE_MCP_PRIVATE_KEY }}"
+
+      - name: Publish to MCP Registry
+        run: ./mcp-publisher publish server.json

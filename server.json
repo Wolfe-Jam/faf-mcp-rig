@@ -1,0 +1,71 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "one.faf/faf-mcp-rig",
+  "description": "FAF-ready MCP server rig — reference + test target.",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/Wolfe-Jam/faf-mcp/main/assets/icons/faf-icon-48.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "48x48"
+      ]
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Wolfe-Jam/faf-mcp/main/assets/icons/faf-icon-128.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "128x128"
+      ]
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Wolfe-Jam/faf-mcp/main/assets/icons/faf-icon-256.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "256x256"
+      ]
+    },
+    {
+      "src": "https://raw.githubusercontent.com/Wolfe-Jam/faf-mcp/main/assets/icons/faf-icon-512.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/Wolfe-Jam/faf-mcp-rig",
+    "source": "github"
+  },
+  "websiteUrl": "https://faf.one",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "faf-mcp-rig",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    },
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/Wolfe-Jam/faf-mcp-rig/releases/download/v0.1.0/faf-mcp-rig-0.1.0.mcpb",
+      "version": "0.1.0",
+      "fileSha256": "cf6f4c5717a9443e6f7d5462980f9c6774f1dd77096cb93c6d83c650cfe276df",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "one.faf/context": {
+        "faf": "./project.faf",
+        "mediaType": "application/vnd.faf+yaml",
+        "iana": "https://www.iana.org/assignments/media-types/application/vnd.faf+yaml",
+        "deterministic": true,
+        "generated": "2026-06-14T00:00:00.000Z"
+      }
+    }
+  }
+}

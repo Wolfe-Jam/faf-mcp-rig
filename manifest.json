@@ -1,0 +1,23 @@
+{
+  "manifest_version": "0.3",
+  "name": "faf-mcp-rig",
+  "display_name": "FAF MCP Rig",
+  "version": "0.1.0",
+  "description": "FAF-ready MCP server rig — reference + test target. 2 tools.",
+  "author": {
+    "name": "wolfejam"
+  },
+  "license": "MIT",
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/dist/index.js"]
+    }
+  },
+  "tools": [
+    { "name": "ping", "description": "Health check — returns pong." },
+    { "name": "faf_context", "description": "Return this server's FAF context block (one.faf/context)." }
+  ]
+}
