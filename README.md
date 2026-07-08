@@ -20,4 +20,4 @@ Two jobs:
 npm install && npm run build && npm start
 ```
 
-**.faf source:** Use `bunx faf` (from faf-cli) to init/score/maintain the project.faf this rig demonstrates. Zero-install, git-native. See the [faf-cli agent guide](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+**.faf source:** `bunx faf` (from faf-cli) inits/scores/maintains the project.faf this rig demonstrates — zero-install, git-native. See [the faf-cli agent guide 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
