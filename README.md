@@ -20,4 +20,12 @@ Two jobs:
 npm install && npm run build && npm start
 ```
 
-**.faf source:** `bunx faf` (from faf-cli) inits/scores/maintains the project.faf this rig demonstrates — zero-install, git-native. See [the faf-cli agent guide 👀](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
+**.faf source:** `bunx faf` (from faf-cli) inits/scores/maintains the project.faf this rig demonstrates — zero-install, git-native.
+
+## Citation
+
+> Wolfe, J. (2025). *Format-Driven AI Context Architecture: The .faf Standard for Persistent Project Understanding*. Zenodo. https://doi.org/10.5281/zenodo.18251362
+
+> Wolfe, J. (2026). *Why Agents Need a Passport: .fafa — Portable Identity for the Agentic Era*. Zenodo. https://doi.org/10.5281/zenodo.21951641
+
+See [the faf-cli agent guide](https://github.com/Wolfe-Jam/faf-cli/blob/main/docs/faf-cli-for-agents.md).
