@@ -1,5 +1,7 @@
 # faf-mcp-rig
 
+[![Business card · Get yours →](https://wolfe-jam.github.io/agent-business-card/badge.svg)](https://wolfe-jam.github.io/agent-business-card/?repo=Wolfe-Jam/faf-mcp-rig)
+
 **A minimal FAF-ready MCP server — reference + test rig.**
 
 Two jobs:
@@ -19,6 +21,8 @@ Two jobs:
 ```bash
 npm install && npm run build && npm start
 ```
+
+**Business card:** `agent.fafa` is this server's business card, written by `npx faf-cli card init`. Run it in your own server to write yours.
 
 **.faf source:** `bunx faf` (from faf-cli) inits/scores/maintains the project.faf this rig demonstrates — zero-install, git-native.
 
