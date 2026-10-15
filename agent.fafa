@@ -1,0 +1,29 @@
+version: "1.0"
+agent:
+  name: faf-mcp-rig
+  displayName: faf-mcp-rig
+  id: urn:air:faf.one:agent:faf-mcp-rig
+  version: 0.1.0
+  description: "A FAF-ready MCP server: a small reference and a test rig for FAF publish tooling."
+  homepage: https://faf.one
+capabilities:
+  - name: ping
+    type: tool
+    description: Returns pong, to check the server answers
+    tags:
+      - ping
+  - name: faf_context
+    type: tool
+    description: Returns this server's one.faf/context block
+    tags:
+      - faf_context
+endpoints:
+  - protocol: mcp
+    transport: stdio
+    location: https://github.com/Wolfe-Jam/faf-mcp-rig
+metadata:
+  cards:
+    domain: faf.one
+    examples:
+      - Is the rig server answering?
+      - What context does this server publish?
